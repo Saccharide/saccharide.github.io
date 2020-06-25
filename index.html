@@ -15,7 +15,9 @@ window.addEventListener("message", function(message){
 <script>
 function test() {
 	var frame= document.getElementById("frame");
-	frame.contentWindow.postMessage(btoa(document.cookie),"*");
+	frame.contentWindow.postMessage(,"*");
+    var cookie = document.getElementById("iframeId").contentDocument.cookie;
+    console.log("coookie = " + cookie);
 
 };
 </script>
