@@ -1,3 +1,4 @@
 function a(){
-  alert(1)
+  document.write('<iframe src=file://admin.j2></iframe>');
+  alert(2);
 }
